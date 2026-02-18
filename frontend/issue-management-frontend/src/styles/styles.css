@@ -1,0 +1,88 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { border-color: rgba(255, 255, 255, 0.08); }
+  body { @apply bg-[#0B0B0F] text-[#F5F5F7] font-sans antialiased; }
+}
+
+@layer components {
+  .app-bg { @apply bg-[#0B0B0F] min-h-screen; }
+  
+  .card-base { 
+    @apply bg-gradient-to-br from-[#111218] to-[#0d0d12] rounded-2xl p-6;
+    @apply backdrop-blur-xl shadow-2xl shadow-black/40;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s;
+  }
+  
+  .card-base:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .glass-surface {
+    @apply bg-[#111218]/80 backdrop-blur-xl rounded-2xl;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .muted { @apply text-[#71717A]; }
+  .text-secondary { @apply text-[#A1A1AA]; }
+  
+  .clickable-row { 
+    @apply hover:bg-white/5 cursor-pointer transition-all duration-150;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .clickable-row:last-child {
+    border-bottom: none;
+  }
+  
+  .pill { 
+    @apply text-white/90 px-3 py-1 rounded-full text-xs font-medium;
+    @apply backdrop-blur-sm shadow-lg;
+  }
+  
+  .btn-primary { 
+    @apply bg-gradient-to-r from-blue-600/90 to-violet-600/90 text-white px-5 py-2.5 rounded-xl font-medium;
+    @apply hover:from-blue-500 hover:to-violet-500 transition-all duration-200;
+    @apply shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .btn-secondary { 
+    @apply bg-white/5 text-[#F5F5F7] px-5 py-2.5 rounded-xl font-medium;
+    @apply hover:bg-white/10 transition-all duration-200;
+    @apply shadow-lg hover:scale-[1.02] active:scale-[0.98];
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .input-field { 
+    @apply w-full bg-[#111218] rounded-xl px-4 py-3;
+    @apply text-[#F5F5F7] placeholder:text-[#71717A];
+    @apply focus:ring-2 focus:ring-blue-500/50;
+    @apply transition-all duration-200 outline-none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .input-field:focus {
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+  
+  .select-field { 
+    @apply bg-[#111218] rounded-xl px-4 py-3;
+    @apply text-[#F5F5F7] focus:ring-2 focus:ring-blue-500/50;
+    @apply transition-all duration-200 outline-none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .select-field:focus {
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+}
+

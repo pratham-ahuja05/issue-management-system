@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply bg-[#0B0B0F] font-sans antialiased; }
+
+.brand { 
+  @apply font-bold text-xl;
+  background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sidebar { 
+  @apply bg-[#111218]/50 backdrop-blur-xl h-full;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-link { 
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl text-[#A1A1AA];
+  @apply hover:bg-white/5 hover:text-[#F5F5F7] transition-all duration-200 font-medium;
+  @apply relative overflow-hidden;
+}
+
+.nav-link::before {
+  content: '';
+  @apply absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-violet-500;
+  @apply opacity-0 transition-opacity duration-200;
+}
+
+.nav-link.active { 
+  @apply bg-gradient-to-r from-blue-600/10 to-violet-600/10 text-[#F5F5F7];
+  @apply shadow-lg shadow-blue-500/10;
+}
+
+.nav-link.active::before {
+  @apply opacity-100;
+}

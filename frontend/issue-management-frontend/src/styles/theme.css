@@ -1,0 +1,36 @@
+/* Theme Variables */
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #0B0B0F;
+  --bg-secondary: #111218;
+  --bg-tertiary: #161821;
+  --text-primary: #F5F5F7;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --accent-primary: #4F6BFF;
+  --accent-gradient: linear-gradient(135deg, #60A5FA, #A78BFA);
+}
+
+body.light {
+  /* Light Theme */
+  --bg-primary: #F6F7FB;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F3F9;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --border-color: #E5E7EB;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-primary: #4F6BFF;
+  --accent-gradient: linear-gradient(135deg, #4F6BFF, #6C63FF);
+}
+
+/* Status Colors */
+:root {
+  --status-open: #3B82F6;
+  --status-progress: #8B5CF6;
+  --status-resolved: #10B981;
+  --status-duplicate: #F59E0B;
+}

@@ -1,0 +1,30 @@
+# =====================
+# Node / React
+# =====================
+node_modules/
+dist/
+build/
+.env
+frontend/node_modules/
+
+# =====================
+# Spring Boot / Java
+# =====================
+target/
+*.log
+*.class
+*.jar
+*.war
+*.iml
+*.idea/
+
+# =====================
+# OS
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Misc
+# =====================
+.vscode/
