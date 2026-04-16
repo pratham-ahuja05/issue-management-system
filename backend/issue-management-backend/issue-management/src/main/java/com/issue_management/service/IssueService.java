@@ -35,7 +35,7 @@ public class IssueService {
         issue.setCreatedBy(1L);
         issue.setUpdatedBy(1L);
 
-        // 🔥 AI ANALYSIS
+        // AI ANALYSIS
         AIResponse ai = aiService.analyzeIssue(
                 issue.getTitle(),
                 issue.getDescription()
