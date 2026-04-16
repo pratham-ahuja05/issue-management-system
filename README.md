@@ -1,6 +1,6 @@
 # 🛡️ Sentinel-AI: Intelligent Incident Engine and Issue Tracker
 
-🔥 "The guardian of your production workflow." — A high-performance backend that transforms raw incident logs into actionable engineering insights.
+ "The guardian of your production workflow." — A high-performance backend that transforms raw incident logs into actionable engineering insights.
 
 ---
 
