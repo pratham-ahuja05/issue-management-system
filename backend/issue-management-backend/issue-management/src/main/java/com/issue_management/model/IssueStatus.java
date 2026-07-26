@@ -4,7 +4,7 @@ public enum IssueStatus {
 
     OPEN,
     POSSIBLE_DUPLICATE,
-    DUPLICATE,          // ✅ confirmed duplicate
+    DUPLICATE,          // confirmed duplicate
     IN_PROGRESS,
     RESOLVED,
     CLOSED;
