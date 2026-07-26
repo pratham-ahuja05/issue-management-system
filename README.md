@@ -380,5 +380,5 @@ For detailed API documentation, authentication flow, and troubleshooting, see [A
 
 ---
 
-**Last Updated:** July 25, 2024  
+**Last Updated:** July 26, 2026  
 **Version:** 1.0.0 (Authentication & Authorization Release)
