@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "*")
 public class UserController {
 
     private final AuthService authService;

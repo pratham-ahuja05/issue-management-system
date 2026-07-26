@@ -156,6 +156,7 @@ public class IssueService {
     // ================= SEARCH =================
     public Page<IssueResponse> searchIssues(
             String query,
+            IssueStatus status,
             int page,
             int size,
             String sortBy,
@@ -168,7 +169,7 @@ public class IssueService {
 
         Pageable pageable = PageRequest.of(page, size, sort);
 
-        return repo.searchActiveIssues(query, pageable)
+        return repo.searchActiveIssues(query, status, pageable)
                 .map(issue -> mapToResponse(issue, List.of()));
     }
 
