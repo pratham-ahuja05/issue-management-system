@@ -7,13 +7,14 @@ public class ErrorResponse {
     private LocalDateTime timestamp;
     private int status;
     private String error;
-    private Object message;
+    private String message;
+    private Object details;
     private String path;
 
     public ErrorResponse(
             int status,
             String error,
-            Object message,
+            String message,
             String path
     ) {
         this.timestamp = LocalDateTime.now();
@@ -21,6 +22,17 @@ public class ErrorResponse {
         this.error = error;
         this.message = message;
         this.path = path;
+    }
+
+    public ErrorResponse(
+            int status,
+            String error,
+            String message,
+            Object details,
+            String path
+    ) {
+        this(status, error, message, path);
+        this.details = details;
     }
 
     public LocalDateTime getTimestamp() {
@@ -35,8 +47,12 @@ public class ErrorResponse {
         return error;
     }
 
-    public Object getMessage() {
+    public String getMessage() {
         return message;
+    }
+
+    public Object getDetails() {
+        return details;
     }
 
     public String getPath() {

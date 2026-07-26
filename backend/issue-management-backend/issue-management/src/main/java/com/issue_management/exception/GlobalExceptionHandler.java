@@ -30,6 +30,7 @@ public class GlobalExceptionHandler {
                 new ErrorResponse(
                         400,
                         "VALIDATION_ERROR",
+                        "Validation failed",
                         errors,
                         request.getRequestURI()
                 )
@@ -46,7 +47,7 @@ public class GlobalExceptionHandler {
                 new ErrorResponse(
                         404,
                         "NOT_FOUND",
-                        ex.getMessage(),
+                        ex.getMessage() == null ? "Resource not found" : ex.getMessage(),
                         request.getRequestURI()
                 )
         );
@@ -62,7 +63,7 @@ public class GlobalExceptionHandler {
                 new ErrorResponse(
                         400,
                         "INVALID_STATE",
-                        ex.getMessage(),
+                        ex.getMessage() == null ? "Invalid request state" : ex.getMessage(),
                         request.getRequestURI()
                 )
         );
@@ -74,13 +75,11 @@ public class GlobalExceptionHandler {
             Exception ex,
             HttpServletRequest request
     ) {
-        ex.printStackTrace(); // 👈 PRINT REAL ERROR
-
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
                 new ErrorResponse(
                         500,
                         "INTERNAL_SERVER_ERROR",
-                        ex.getMessage(),   // 👈 RETURN REAL MESSAGE
+                        "Internal server error",
                         request.getRequestURI()
                 )
         );

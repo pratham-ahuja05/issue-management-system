@@ -51,10 +51,28 @@ Java 17, Spring Boot 3.x, PostgreSQL, Spring Data JPA, Maven
 - `spring.datasource.username` – database user  
 - `spring.datasource.password` – database password  
 - `spring.jpa.hibernate.ddl-auto` – schema update strategy  
+- `APP_CORS_ALLOWED_ORIGINS` – comma-separated list of allowed frontend origins  
+- `JWT_SECRET` / `JWT_EXPIRATION` – JWT signing and expiry settings  
 
 API Parameters:
 - `status` – filter issues by state (e.g., OPEN, RESOLVED)  
 - `id` – unique identifier for issue operations  
+
+Frontend:
+- Development uses Vite proxy (`/api`) and does not require `VITE_API_BASE`.
+- Production must set `VITE_API_BASE` to the absolute backend URL.
+
+## 🚀 Local vs Production Setup
+
+1. **Backend env**
+   - Copy `backend/issue-management-backend/issue-management/.env.example`
+   - Set datasource, JWT, and `APP_CORS_ALLOWED_ORIGINS`
+2. **Frontend env**
+   - Copy `frontend/issue-management-frontend/.env.example`
+   - Set `VITE_API_BASE` only for production deployment
+3. **CORS**
+   - Keep localhost origins in development
+   - Use explicit frontend domains in production (no wildcard)
 
 ---
 

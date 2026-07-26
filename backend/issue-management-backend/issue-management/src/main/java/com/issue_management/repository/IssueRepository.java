@@ -40,8 +40,9 @@ public interface IssueRepository extends JpaRepository<Issue, Long> {
         @Query("""
         SELECT i FROM Issue i
         WHERE i.deleted = false
+        AND (:status IS NULL OR i.status = :status)
         AND (LOWER(i.title) LIKE LOWER(CONCAT('%', :query, '%'))
         OR LOWER(i.description) LIKE LOWER(CONCAT('%', :query, '%')))
     """)
-        Page<Issue> searchActiveIssues(@Param("query") String query, Pageable pageable);
+        Page<Issue> searchActiveIssues(@Param("query") String query, @Param("status") IssueStatus status, Pageable pageable);
 }

@@ -13,7 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/issues")
-@CrossOrigin(origins = "*")
 public class IssueController {
 
     private final IssueService issueService;
@@ -72,11 +71,12 @@ public class IssueController {
     @GetMapping("/search")
     public Page<IssueResponse> searchIssues(
             @RequestParam String query,
+            @RequestParam(required = false) IssueStatus status,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
             @RequestParam(defaultValue = "id") String sortBy,
             @RequestParam(defaultValue = "asc") String direction
     ) {
-        return issueService.searchIssues(query, page, size, sortBy, direction);
+        return issueService.searchIssues(query, status, page, size, sortBy, direction);
     }
 }
