@@ -17,6 +17,14 @@
 
 ---
 
+## 🧠 ER Diagram
+
+<p align="center">
+  <img src="ER diagram IMS.png" width="80%"/>
+</p>
+
+---
+
 ## ✨ Core Features
 
 | Feature | Description |
